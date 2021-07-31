@@ -11,7 +11,7 @@ app.get('/', (req, res)=>{
     res.send('main');
 })
 app.get('*/api', (req, res) => {
-    res.send({alldata: 'hello'});
+    res.send({alldata: 'data'})
 })
 
 app.listen(port, (err) => {
