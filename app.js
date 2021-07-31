@@ -13,8 +13,10 @@ if(process.env.NODE_ENV === "production"){
         req.sendFile(path.resolve(__dirname, 'build', 'index.html'));
     })
 }
-
-app.get('/api', (req, res) => {
+app.get('/', (req, res)=>{
+    res.send('main');
+})
+app.get('*/api', (req, res) => {
     res.send('hello');
 })
 
