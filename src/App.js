@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-
+import React, { useState, useEffect, Component } from 'react';
+import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
 
@@ -32,8 +32,7 @@ class App extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    fetch(`api/user/${this.state.username}/${this.state.password}`).then(response => response.json())
-    .then(state => this.setState(state));
+    fetch(`api/user/${this.state.username}/${this.state.password}`).then(response => response.json()).then(state => this.setState(state));
     
      
   }
@@ -41,7 +40,7 @@ class App extends Component {
   handleRequest(){
    
     
-    console.log(fetch('/api')).then(response => response.json()).then(state => this.setState(state));
+    fetch('/api').then(response => response.json()).then(state => this.setState(state));
    
   }
 

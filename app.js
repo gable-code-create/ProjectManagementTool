@@ -4,20 +4,13 @@ const app = express();
 
 const path = require('path');
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 
 
-if(process.env.NODE_ENV === "production"){
-    app.use(express.static('build'));
-    app.get('*', (req, res) => {
-        req.sendFile(path.resolve(__dirname, 'build', 'index.html'));
-    })
-}
-app.get('/', (req, res)=>{
-    res.send('main')
-})
-app.get('*/api', (req, res) => {
-    res.send('hello');
+
+app.get('/api', (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send({alldata: `Your username is`} || 'wow');
 })
 
 app.listen(port, (err) => {
