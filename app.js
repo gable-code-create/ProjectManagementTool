@@ -7,8 +7,15 @@ const path = require('path');
 const port = process.env.PORT || 5000;
 
 
-app.get('/', function (req, res){
-    res.send('hello word');
+if(process.env.NODE_ENV === "production"){
+    app.use(express.static('build'));
+    app.get('*', (req, res) => {
+        req.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+    })
+}
+
+app.get('/api', (req, res) => {
+    res.send('hello');
 })
 
 app.listen(port, (err) => {
