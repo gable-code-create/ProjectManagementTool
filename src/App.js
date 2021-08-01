@@ -11,7 +11,7 @@ class App extends Component {
     this.state = {
       name: '',
       greeting: '',
-      alldata: 'red',
+      alldata: 'blue',
       username:'',
       password: ''
 
@@ -29,10 +29,10 @@ class App extends Component {
     this.setState({[event.target.id]: event.target.value});
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
+  handleSubmit() {
+   
 
-    fetch(`api/user/${this.state.username}/${this.state.password}`).then(response => response.json()).then(state => this.setState(state));
+    fetch(`/this`).then(response => response.json()).then(state => this.setState(state));
     
      
   }
@@ -58,7 +58,7 @@ render(){
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-      <button onClick={this.handleRequest}>fetch</button>
+      <button onClick={this.handleSubmit}>fetch</button>
         <p>{this.state.username}</p>
         <p>{this.state.password}</p>
         <div><button onClick={this.handleRequest}>request data</button>

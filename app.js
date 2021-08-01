@@ -31,13 +31,15 @@ app.use(pino);
 
 var params = {
     TableName: TABLE_NAME,
-    Key:{"id":0}
+    Key:{ 
+        kind: 'fire'
+    }
   }
   
   const getData = async () => {
     const params = {
       TableName: TABLE_NAME,
-      Key:{"id":0}
+      Key:{"kind": "fire"}
     }
   
     const userT = await dynamoClient.scan(params).promise();
@@ -64,10 +66,12 @@ app.get('/this', (req, res) => {
  dynamoClient.get(params, function (err, data) {
   
 
-
-    console.log(data.Items[0].name);
-     
-      res.send({alldata: `this is the data ${data.Items[0].name}`});
+    res.setHeader('Content-Type', 'application/json');
+ 
+        console.log(data);   
+        console.log(data.Item.name)
+      res.send({alldata: `this is the data ${data.Item.name}`});
       
     })
+    
 })
