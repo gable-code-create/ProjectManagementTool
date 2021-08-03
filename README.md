@@ -13,3 +13,7 @@ Planned features of PMT include
 
 # Contributions and constructive feedback welcome
 
+I can be reached on 
+
+- LinkedIn https://www.linkedin.com/in/nathan-gable-a586b5180/
+- Twitter @NathanGable7
