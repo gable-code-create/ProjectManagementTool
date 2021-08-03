@@ -27,6 +27,7 @@ AWS.config.update({
 
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(pino);
 
 var params = {
@@ -74,4 +75,14 @@ app.get('/this', (req, res) => {
       
     })
     
+})
+
+
+app.get('/create', (req, res) => {
+
+
+    dynamoClient.put(params, function (err, data){
+
+
+    })
 })

@@ -1,6 +1,8 @@
 import React, { useState, useEffect, Component } from 'react';
+
 import axios from 'axios';
 import logo from './logo.svg';
+import NavbarComponent from './NavbarComponent';
 import './App.css';
 
 class App extends Component {
@@ -43,7 +45,9 @@ class App extends Component {
     fetch('/api').then(response => response.json()).then(state => this.setState(state));
    
   }
-
+  handleSignUp(){
+    fetch('/create').then()
+  }
   
 render(){
 
@@ -52,18 +56,13 @@ render(){
  
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div >
+      <header>
      
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      <button onClick={this.handleSubmit}>fetch</button>
-        <p>{this.state.username}</p>
-        <p>{this.state.password}</p>
-        <div><button onClick={this.handleRequest}>request data</button>
-        {this.state.alldata}
-        </div>
+       
+      <button onClick={this.handleSubmit}>dynamo fetch test</button>
+       
+        
         <a
           className="App-link"
           href="https://reactjs.org"
