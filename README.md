@@ -1,6 +1,6 @@
 # PMT Project management tool
 
-PMT is a public project created to be a user friendly project management/ team management tool. 
+PMT is a public project created to be a user friendly project management/ team management tool. Hopefully this can help web development beginners and be a helpful tool for projects.
 
 Planned features of PMT include
 - Role assignment
